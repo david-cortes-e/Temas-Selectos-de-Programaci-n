@@ -38,7 +38,7 @@ class MainActivity : ComponentActivity() {
             CertificadoApp20261Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     CertificatingCourse(
-                        name = "Android",
+                        name = "David Cortés Elvira",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -55,9 +55,11 @@ fun CertificatingCourse(
     course:String="Uso básico de Kotlin") {
     Column (
         modifier.fillMaxSize().padding(10.dp),
-        verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally        )
     {
+        Spacer(modifier=modifier.height(20.dp))
+
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceAround,
@@ -83,7 +85,7 @@ fun CertificatingCourse(
             )
         }
 
-        Spacer(modifier=modifier.height(20.dp)) //espacio entre texto
+        Spacer(modifier=modifier.height(10.dp)) //espacio entre texto
 
         Text(
             text = "This certificate is presented to:",
@@ -92,7 +94,8 @@ fun CertificatingCourse(
             textAlign = TextAlign.Center,
         )
 
-        Box(contentAlignment= Alignment.Center) {
+        Box(modifier = Modifier.fillMaxWidth().height(400.dp),
+            contentAlignment = Alignment.Center) {
             Image(
                 painter = painterResource(id = R.drawable.graduacion),
                 modifier=modifier.fillMaxWidth(),
@@ -111,7 +114,7 @@ fun CertificatingCourse(
         Spacer(modifier=modifier.height(10.dp))
 
         Text(
-            text="Has completed a $number hour course on:",
+            text="Has completed a $number hours course on:",
             fontSize = 20.sp,
             modifier=modifier.fillMaxWidth(),
             textAlign = TextAlign.Center,
@@ -123,7 +126,7 @@ fun CertificatingCourse(
             modifier=modifier.fillMaxWidth(),
             textAlign = TextAlign.Center,
         )
-        Spacer(modifier=modifier.height(20.dp)) //espacio entre texto
+        Spacer(modifier=modifier.height(10.dp)) //espacio entre texto
 
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -139,7 +142,7 @@ fun CertificatingCourse(
                 Image(
                     painter = painterResource(id=R.drawable.firma1),
                     contentDescription = null,
-                    modifier.size(70.dp,70.dp)
+                    modifier.size(150.dp,150.dp)
                 )
                 Text(
                     text ="Juanito Pérez",
@@ -156,7 +159,7 @@ fun CertificatingCourse(
                 Image(
                     painter = painterResource(id=R.drawable.firma2),
                     contentDescription = null,
-                    modifier.size(70.dp,70.dp)
+                    modifier.size(150.dp,150.dp)
                 )
                 Text(
                     text ="Pedro López",
